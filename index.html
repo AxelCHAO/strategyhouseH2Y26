@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>传统滋补 H2 战略屋</title>
+<style>
+  :root{
+    --bg0:#0e1c36; --bg1:#152847; --bg2:#1e3560;
+    --panel:rgba(255,255,255,.035);
+    --panel2:rgba(255,255,255,.06);
+    --line:rgba(255,255,255,.10);
+    --ink:#eef2fb; --sub:#93a0bd; --dim:#6b768f;
+    --p1a:#17c98a; --p1b:#33e6a8;   /* 拓品拓客 */
+    --p2a:#2f8dff; --p2b:#5fd4ff;   /* 四力升级 */
+    --p3a:#8b5cf6; --p3b:#c39bff;   /* 生意革新 */
+    --glow:#3fd0ff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue",sans-serif;
+    background:#0a1830; color:var(--ink);
+    -webkit-font-smoothing:antialiased; line-height:1.4;
+  }
+  .viewport{width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0a1830;}
+  .stage{
+    width:1600px;height:900px;flex:0 0 auto;position:relative;transform-origin:center center;
+    padding:18px 40px 14px;display:flex;flex-direction:column;
+    background:
+      radial-gradient(1200px 620px at 50% -8%, rgba(47,141,255,.16), transparent 60%),
+      radial-gradient(900px 520px at 88% 108%, rgba(139,92,246,.14), transparent 60%),
+      radial-gradient(760px 460px at 10% 106%, rgba(23,201,138,.12), transparent 60%),
+      linear-gradient(160deg, var(--bg1), var(--bg0));
+  }
+  .stage::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(rgba(120,160,255,.05) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(120,160,255,.05) 1px,transparent 1px);
+    background-size:44px 44px;mask-image:radial-gradient(circle at 50% 40%,#000 60%,transparent 100%);}
+  .stage>*{position:relative;z-index:1;}
+
+  .subtitle{text-align:center;color:var(--sub);font-size:12px;font-weight:400;margin-bottom:9px;letter-spacing:.4px;}
+  .subtitle b{color:var(--glow);font-weight:600;}
+
+  /* 屋顶：目标层（健康广告消耗额） */
+  .roof{position:relative;width:100%;height:116px;overflow:hidden;flex:0 0 auto;
+    border-radius:18px;border:1px solid rgba(120,180,255,.22);
+    box-shadow:0 0 0 1px rgba(63,208,255,.10) inset, 0 12px 34px rgba(0,20,60,.5), 0 0 40px rgba(47,141,255,.18);}
+  .roof svg{position:absolute;inset:0;width:100%;height:100%;display:block;}
+  .roof .roof-inner{position:relative;z-index:1;height:100%;color:#fff;text-align:center;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 40px;}
+  .roof .goal-tag{font-size:11px;letter-spacing:4px;color:#7fd6ff;text-transform:uppercase;font-weight:600;margin-bottom:5px;}
+  .roof .star{font-size:44px;font-weight:700;letter-spacing:1px;
+    background:linear-gradient(90deg,#eaf6ff,#8fe3ff 55%,#c9b3ff);-webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 30px rgba(90,200,255,.35);}
+  .roof .note{margin-top:8px;font-size:12px;color:#9fb6de;font-weight:300;}
+  .roof .note em{font-style:normal;color:#bcd6ff;font-weight:500;}
+
+  /* ===== 增长公式 × 三大支柱：公式→连线→三柱 同框 ===== */
+  .growth{margin-top:12px;flex:1 1 auto;display:flex;flex-direction:column;min-height:0;
+    border:1px solid var(--line);border-radius:18px;padding:12px 14px 14px;
+    background:linear-gradient(180deg,rgba(63,140,255,.06),rgba(255,255,255,.015));}
+  .sec-label{display:flex;align-items:baseline;gap:9px;justify-content:center;margin-bottom:9px;}
+  .sec-label .cn{font-size:15px;font-weight:700;letter-spacing:1px;color:#eaf1ff;}
+  .sec-label .en{font-size:11px;font-weight:400;color:var(--dim);letter-spacing:2px;text-transform:uppercase;}
+
+  /* 公式：健康广告增收 = 客户数(拓客)×商品数(拓品) × ARPU(四力) × 效率(链路升级) */
+  .formula{display:flex;align-items:stretch;gap:10px;flex:0 0 auto;}
+  .formula .lead{display:flex;flex-direction:column;justify-content:center;padding-right:6px;
+    border-right:1px dashed rgba(255,255,255,.14);}
+  .formula .lead .eq-cn{font-size:14px;font-weight:700;color:#eaf1ff;white-space:nowrap;}
+  .formula .lead .eq-en{font-size:9.5px;color:var(--dim);letter-spacing:1px;margin-top:2px;}
+  .formula .eq{align-self:center;font-size:26px;font-weight:300;color:#eaf1ff;line-height:1;}
+  .fgroup{flex:1;display:flex;align-items:center;gap:8px;justify-content:center;
+    border:1px solid transparent;border-radius:12px;padding:5px 7px;position:relative;}
+  /* 支柱一组：客户数×商品数 一起框住，强化与「拓品拓客」的归属 */
+  .g1{border-color:rgba(23,201,138,.34);background:rgba(23,201,138,.07);
+    box-shadow:0 0 22px rgba(23,201,138,.10);}
+  .times{font-size:22px;font-weight:300;color:var(--glow);line-height:1;flex:0 0 auto;
+    text-shadow:0 0 12px rgba(63,208,255,.6);}
+  .factor{flex:1;border:1px solid var(--line);border-top:2px solid;border-radius:11px;
+    padding:7px 8px 6px;text-align:center;background:var(--panel2);backdrop-filter:blur(4px);}
+  .g1 .factor{border-top-color:var(--p1a);}
+  .g2 .factor{border-top-color:var(--p2a);box-shadow:0 0 22px rgba(47,141,255,.14);}
+  .g3 .factor{border-top-color:var(--p3a);box-shadow:0 0 22px rgba(139,92,246,.14);}
+  .factor .f-cn{font-size:15px;font-weight:700;color:#f2f6ff;}
+  .factor .f-cn .up{font-weight:800;}
+  .g1 .f-cn .up{color:var(--p1b);} .g2 .f-cn .up{color:var(--p2b);} .g3 .f-cn .up{color:var(--p3b);}
+  .factor .f-map{font-size:9.5px;letter-spacing:.5px;margin-top:2px;font-weight:600;}
+  .g1 .f-map{color:var(--p1b);} .g2 .f-map{color:var(--p2b);} .g3 .f-map{color:var(--p3b);}
+
+  /* 连线：因子组 → 对应柱（带柱名，强关联） */
+  .connectors{display:flex;gap:14px;flex:0 0 auto;height:20px;margin-top:2px;}
+  .conn{flex:1;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;}
+  .conn .drop{width:2px;height:9px;}
+  .conn .head{font-size:11px;line-height:1;margin-top:1px;}
+  .c1 .drop{background:linear-gradient(var(--p1a),transparent);} .c1 .head{color:var(--p1a);}
+  .c2 .drop{background:linear-gradient(var(--p2a),transparent);} .c2 .head{color:var(--p2a);}
+  .c3 .drop{background:linear-gradient(var(--p3a),transparent);} .c3 .head{color:var(--p3a);}
+
+  /* 三柱 */
+  .pillars{display:flex;gap:14px;align-items:stretch;flex:1 1 auto;min-height:0;}
+  .pillar{flex:1;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column;min-height:0;background:var(--panel);backdrop-filter:blur(6px);}
+  .p1{box-shadow:0 0 30px rgba(23,201,138,.10);}
+  .p2{box-shadow:0 0 30px rgba(47,141,255,.12);}
+  .p3{box-shadow:0 0 30px rgba(139,92,246,.12);}
+  .pillar-head{padding:8px 12px 7px;text-align:center;color:#fff;flex:0 0 auto;}
+  .pillar-head .pno{font-size:9.5px;font-weight:700;letter-spacing:3px;opacity:.9;text-transform:uppercase;}
+  .pillar-head .pcn{font-size:17px;font-weight:700;margin-top:2px;letter-spacing:.5px;}
+  .p1 .pillar-head{background:linear-gradient(135deg,var(--p1a),var(--p1b));}
+  .p2 .pillar-head{background:linear-gradient(135deg,var(--p2a),var(--p2b));}
+  .p3 .pillar-head{background:linear-gradient(135deg,var(--p3a),var(--p3b));}
+  .pillar-body{flex:1 1 auto;padding:10px 11px;display:flex;flex-direction:column;gap:8px;min-height:0;}
+  .grp-title{font-size:12.5px;font-weight:700;margin-bottom:5px;color:#e7edfb;}
+  .p1 .grp-title{border-left:3px solid var(--p1a);padding-left:8px;}
+  .p2 .grp-title{border-left:3px solid var(--p2a);padding-left:8px;}
+  .p3 .grp-title{border-left:3px solid var(--p3a);padding-left:8px;}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;}
+  .chip{font-size:11px;font-weight:400;padding:3.5px 9px;border-radius:8px;line-height:1.3;
+    background:rgba(255,255,255,.045);border:1px solid var(--line);color:#c7d1e6;}
+  .p1 .chip{border-color:rgba(23,201,138,.30);}
+  .p2 .chip{border-color:rgba(47,141,255,.30);}
+  .p3 .chip{border-color:rgba(139,92,246,.30);}
+
+  /* ===== 地板：双基石（标签内嵌为表头） ===== */
+  .floor{margin-top:12px;border-radius:16px;overflow:hidden;flex:0 0 auto;
+    border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    box-shadow:0 -6px 30px rgba(0,0,0,.28);}
+  .floor-head{display:flex;align-items:baseline;gap:9px;justify-content:center;padding:8px 0 7px;
+    background:linear-gradient(180deg,rgba(120,150,255,.10),transparent);
+    border-bottom:1px solid rgba(255,255,255,.08);}
+  .floor-head .cn{font-size:14px;font-weight:700;letter-spacing:1px;color:#eaf1ff;}
+  .floor-head .en{font-size:10px;color:var(--dim);letter-spacing:2px;text-transform:uppercase;}
+  .floor-body{display:flex;}
+  .f-side{flex:1;padding:10px 22px 12px;}
+  .f-side:first-child{border-right:1px solid rgba(255,255,255,.10);}
+  .bc-badge{text-align:center;font-size:9.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:6px;}
+  .bc-title{font-size:14px;font-weight:700;text-align:center;margin-bottom:8px;display:flex;gap:8px;justify-content:center;align-items:baseline;flex-wrap:wrap;}
+  .bc-title .en{font-size:10px;font-weight:400;color:#9aa6c0;letter-spacing:.5px;}
+  .floor .chips{justify-content:center;}
+  .floor .chip{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);color:#dbe3f4;font-size:11.5px;}
+  .bc1 .bc-badge{color:#f0d38a;} .bc1 .bc-title{color:#f5dc96;}
+  .bc2 .bc-badge{color:#c8b3f0;} .bc2 .bc-title{color:#d3c0f5;}
+
+  /* 地基监测 */
+  .ground{border:1px solid rgba(23,201,138,.28);border-radius:12px;background:rgba(23,201,138,.06);
+    padding:8px 18px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:14px;flex:0 0 auto;flex-wrap:wrap;}
+  .ground .g-label{font-size:12.5px;font-weight:700;color:var(--p1b);white-space:nowrap;
+    display:flex;align-items:baseline;gap:6px;flex:0 0 auto;}
+  .ground .g-label .en{font-size:9px;font-weight:400;color:var(--dim);letter-spacing:1px;}
+  .ground .g-items{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;flex:0 1 auto;}
+  .g-chip{font-size:11px;font-weight:400;padding:3.5px 10px;border-radius:999px;
+    background:rgba(23,201,138,.10);border:1px solid rgba(23,201,138,.34);color:#9fe9c8;}
+
+  .foot{text-align:center;color:var(--dim);font-size:10.5px;margin-top:8px;font-weight:300;letter-spacing:.5px;flex:0 0 auto;}
+  .foot b{color:var(--sub);font-weight:500;}
+</style>
+</head>
+<body>
+<div class="viewport">
+<div class="stage">
+
+  <div class="subtitle">房顶收口目标 · 三柱支撑动作 · 地板承重合规 —— 一张图看清 <b>「为什么做 · 做什么 · 图什么」</b></div>
+
+  <!-- 屋顶：目标层（健康广告消耗额） -->
+  <div class="roof">
+    <svg viewBox="0 0 1000 124" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="roofg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#0d2a52"/>
+          <stop offset=".55" stop-color="#123a6e"/>
+          <stop offset="1" stop-color="#2a1c5e"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,124 L0,40 Q500,2 1000,40 L1000,124 Z" fill="url(#roofg)"/>
+    </svg>
+    <div class="roof-inner">
+      <div class="goal-tag">Final Goal · 目标层</div>
+      <div class="star">健康的可持续收入</div>
+    </div>
+  </div>
+
+  <!-- ===== 增长公式 × 三大支柱 ===== -->
+  <div class="growth">
+    <div class="sec-label"><span class="cn">增长公式 × 三大支柱</span><span class="en">Growth Formula × Three Pillars</span></div>
+
+    <!-- 公式：广告收入 = 客户数(拓客)×商品数(拓品) × 单品ARPU(四力) × 变现效率(链路升级) -->
+    <div class="formula">
+      <div class="lead">
+        <div class="eq-cn">广告收入</div>
+        <div class="eq-en">Ad Revenue</div>
+      </div>
+      <div class="eq">=</div>
+      <div class="fgroup g1">
+        <div class="factor"><div class="f-cn">客户数 <span class="up">↑</span></div><div class="f-map">拓客</div></div>
+        <span class="times">×</span>
+        <div class="factor"><div class="f-cn">商品数 <span class="up">↑</span></div><div class="f-map">拓品</div></div>
+      </div>
+      <span class="times">×</span>
+      <div class="fgroup g2">
+        <div class="factor"><div class="f-cn">单品 ARPU <span class="up">↑</span></div><div class="f-map">四力</div></div>
+      </div>
+      <span class="times">×</span>
+      <div class="fgroup g3">
+        <div class="factor"><div class="f-cn">变现效率 <span class="up">↑</span></div><div class="f-map">广告外链路升级</div></div>
+      </div>
+    </div>
+
+    <!-- 连线：因子组 → 对应柱 -->
+    <div class="connectors">
+      <div class="conn c1"><span class="drop"></span><span class="head">▼</span></div>
+      <div class="conn c2"><span class="drop"></span><span class="head">▼</span></div>
+      <div class="conn c3"><span class="drop"></span><span class="head">▼</span></div>
+    </div>
+
+    <div class="pillars">
+      <!-- 支柱一：拓品拓客（Axel Part：看清品 / 看清客 / 怎么拓） -->
+      <div class="pillar p1">
+        <div class="pillar-head">
+          <div class="pno">Pillar 1</div>
+          <div class="pcn">拓品拓客</div>
+        </div>
+        <div class="pillar-body">
+          <div class="grp">
+            <div class="grp-title">看清品</div>
+            <div class="chips">
+              <span class="chip">滋补商品地图 · 品类映射表</span>
+              <span class="chip">看市占与优先级</span>
+              <span class="chip">单一品类先行测试</span>
+            </div>
+          </div>
+          <div class="grp">
+            <div class="grp-title">看清客</div>
+            <div class="chips">
+              <span class="chip">钱包份额</span>
+              <span class="chip">行业对比</span>
+              <span class="chip">客群梯队建设</span>
+            </div>
+          </div>
+          <div class="grp">
+            <div class="grp-title">怎么拓</div>
+            <div class="chips">
+              <span class="chip">代理培训与赋能</span>
+              <span class="chip">增长组定点培育协同</span>
+              <span class="chip">到地批量拓客</span>
+              <span class="chip">节点性活动策划</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 支柱二：四力提升（Axel Part：商品力 / 投放力 / 内容力 / 经营力） -->
+      <div class="pillar p2">
+        <div class="pillar-head">
+          <div class="pno">Pillar 2</div>
+          <div class="pcn">四力提升</div>
+        </div>
+        <div class="pillar-body">
+          <div class="grp">
+            <div class="grp-title">商品力</div>
+            <div class="chips">
+              <span class="chip">可识别：功效×成分×人群精准化识别</span>
+              <span class="chip">有供给：行业拓品地图 · 拓品优先级</span>
+              <span class="chip">能起量：联动商推 / 微广场景化提权</span>
+            </div>
+          </div>
+          <div class="grp">
+            <div class="grp-title">投放力</div>
+            <div class="chips">
+              <span class="chip">信息平权：AI skill 投前规划 / 投中扶持 / 投后复盘</span>
+              <span class="chip">技术平权：AIGC-智投-全域通 ADQ 双开</span>
+            </div>
+          </div>
+          <div class="grp">
+            <div class="grp-title">内容力</div>
+            <div class="chips">
+              <span class="chip">创意内容：素材 + KOL/KOC · 增原创扩供给</span>
+              <span class="chip">直播内容：创始人 / 科研 / 产地 / 达人 / 矩阵直播</span>
+            </div>
+          </div>
+          <div class="grp">
+            <div class="grp-title">经营力</div>
+            <div class="chips">
+              <span class="chip">闭环经营：人货场 · 教育培训 + 单个陪跑</span>
+              <span class="chip">非闭环经营：公转私合规 · 私转公提效</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 支柱三：生意革新（Axel Part：协同企微 / 协同渠道 / 远期愿景） -->
+      <div class="pillar p3">
+        <div class="pillar-head">
+          <div class="pno">Pillar 3</div>
+          <div class="pcn">生意革新</div>
+        </div>
+        <div class="pillar-body">
+          <div class="grp">
+            <div class="grp-title">协同企微</div>
+            <div class="chips">
+              <span class="chip">行业会 / 单点沟通</span>
+              <span class="chip">协助后端合规化</span>
+            </div>
+          </div>
+          <div class="grp">
+            <div class="grp-title">协同渠道</div>
+            <div class="chips">
+              <span class="chip">认证私域服务商</span>
+              <span class="chip">限制生成获客助手能力</span>
+              <span class="chip">推动私域转到「水上」</span>
+            </div>
+          </div>
+          <div class="grp">
+            <div class="grp-title">远期愿景</div>
+            <div class="chips">
+              <span class="chip">参考京东健康 · 成立腾讯自有私域</span>
+              <span class="chip">统一后端服务不同类型客户</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 地板：双基石 ===== -->
+  <div class="floor">
+    <div class="floor-head"><span class="cn">地板 · 双基石</span><span class="en">Cornerstones · 承重底座</span></div>
+    <div class="floor-body">
+      <div class="f-side bc1">
+        <div class="bc-badge">Cornerstone ①</div>
+        <div class="bc-title">合规 <span class="en">可准入 / 可识别 / 可监管 —— 可放开、可经营</span></div>
+        <div class="chips">
+          <span class="chip">品类独立 · 开户节点管理</span>
+          <span class="chip">32 功效词 × 风控词库对齐</span>
+          <span class="chip">一品多效 1 对 N 架构</span>
+          <span class="chip">绿黄红准入评级 · 服务商白名单</span>
+        </div>
+      </div>
+      <div class="f-side bc2">
+        <div class="bc-badge">Cornerstone ②</div>
+        <div class="bc-title">功效表达进广告系统</div>
+        <div class="chips">
+          <span class="chip">彻底区分健康食品 vs 普通消费品</span>
+          <span class="chip">做出行业特色 · 最快直接提效</span>
+          <span class="chip">代表可投放 · 更高广告效率</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 地基监测：合规收入占比（健康可持续收入的量化口径） -->
+  <div class="ground">
+    <div class="g-label">🩺 健康可持续收入 = 合规收入占比<span class="en">Health Check · Compliant Revenue</span></div>
+    <div class="g-items">
+      <span class="g-chip">广告拒审 ↓ · 投放力</span>
+      <span class="g-chip">非闭环依赖 ↓ / 合规经营占比 ↑ · 经营力链路升级</span>
+      <span class="g-chip">小店品退 / 小程序投诉率 ↓ · 经营力合规升级</span>
+    </div>
+  </div>
+
+  <div class="foot"><b>传统滋补 H2 整体规划 · 战略屋</b> · 2026-07-06 · 参照 Axel《H2 增收策略分享》对齐</div>
+
+</div>
+</div>
+
+<script>
+  (function(){
+    var stage = document.querySelector('.stage');
+    function fit(){
+      var s = Math.min(window.innerWidth/1600, window.innerHeight/900);
+      stage.style.transform = 'scale(' + s + ')';
+    }
+    window.addEventListener('resize', fit);
+    fit();
+  })();
+</script>
+</body>
+</html>
