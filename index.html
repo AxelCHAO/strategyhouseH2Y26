@@ -28,7 +28,7 @@ body{
 .head .read span{color:#1D7FC0;font-weight:700}
 svg{width:100%;height:auto;display:block}
 svg text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
-.legend{display:flex;flex-wrap:wrap;gap:26px;margin-top:34px;padding-top:24px;
+.legend{display:flex;flex-wrap:wrap;gap:26px;margin-top:30px;padding-top:24px;
   border-top:1px solid #E1E7EF;font-size:12px;color:#6D7D8E}
 .legend span{display:flex;align-items:center;gap:8px}
 .legend i{width:22px;height:8px;border-radius:4px;display:inline-block}
@@ -47,12 +47,12 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI
     </div>
     <div class="read">
       <b>推导链（沿箭头自下而上）</b><br>
-      <span>H1 读数</span> 发生了什么　→　<span>三个诊断</span> 看清了什么　→　<span>双基石</span> 前提是什么　→　<span>三支柱</span> 投哪三个方向　→　<span>屋顶</span> 交付什么结果<br>
+      <span>三个诊断</span> 看清了什么　→　<span>双基石</span> 前提是什么　→　<span>三支柱</span> 投哪三个方向　→　<span>屋顶</span> 交付什么结果<br>
       三列上下同一条逻辑，可整列纵读。
     </div>
   </div>
 
-  <svg viewBox="0 0 1440 1098" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="roof" x1="0.15" y1="0" x2="0.8" y2="1">
         <stop offset="0" stop-color="#2A6BAE"/>
@@ -83,8 +83,8 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI
         <polygon points="720,38 1384,232 56,232"/>
       </clipPath>
       <g id="chev">
-        <polyline points="-4.5,6 0,0 4.5,6" fill="none" stroke="#6E9BC4" stroke-opacity="0.85"
-                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="-4.5,6 0,0 4.5,6" fill="none" stroke="#6E9BC4" stroke-opacity="0.8"
+                  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
     </defs>
 
@@ -101,180 +101,148 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI
 
     <text x="720" y="128" font-size="11.5" letter-spacing="5" fill="#BEDCF5" text-anchor="middle" font-weight="700">H2 北极星</text>
     <text x="720" y="176" font-size="36" font-weight="700" letter-spacing="-0.6" fill="#FFFFFF" text-anchor="middle">把量长在方法论上</text>
-    <text x="720" y="210" font-size="14" fill="#CFE3F5" text-anchor="middle">存量更强　·　新开更准　·　H2 结束时客群结构比现在更健康</text>
+    <text x="720" y="210" font-size="15" fill="#CFE3F5" text-anchor="middle">存量更强　·　新开更准　·　节点更爆，谷底不低</text>
 
     <rect x="38" y="226" width="1364" height="15" rx="7.5" fill="url(#eave)"/>
 
-    <!-- 箭头 E -->
-    <line x1="720" y1="270" x2="720" y2="254" stroke="#6E9BC4" stroke-opacity="0.85" stroke-width="1.6" stroke-linecap="round"/>
-    <use href="#chev" x="720" y="246"/>
-
-    <!-- ══════════ 转化命题 ══════════ -->
-    <rect x="56" y="274" width="1328" height="66" rx="18" fill="#F5F8FC" stroke="#DFE7F1"/>
-    <text x="720" y="300" font-size="10.5" letter-spacing="4" fill="#8A98A6" text-anchor="middle" font-weight="700">H2 转化命题</text>
-    <text x="720" y="325" font-size="17" fill="#16324E" text-anchor="middle">把靠机会和大哥换来的量　<tspan fill="#1D7FC0" font-weight="700">→</tspan>　换成靠方法论能复制的量</text>
-
-    <!-- 箭头 D -->
-    <line x1="268" y1="360" x2="268" y2="349" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="268" y="342"/>
-    <line x1="720" y1="360" x2="720" y2="349" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="720" y="342"/>
-    <line x1="1172" y1="360" x2="1172" y2="349" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="1172" y="342"/>
+    <!-- 箭头 · 三支柱 → 屋顶 -->
+    <line x1="268" y1="282" x2="268" y2="260" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="268" y="252"/>
+    <line x1="720" y1="282" x2="720" y2="260" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="720" y="252"/>
+    <line x1="1172" y1="282" x2="1172" y2="260" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="1172" y="252"/>
 
     <!-- ══════════ 三支柱 ══════════ -->
 
     <!-- 柱一 · 客群 -->
-    <rect x="56" y="364" width="424" height="344" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
-    <rect x="56" y="364" width="424" height="62" rx="18" fill="url(#pillarHead)"/>
-    <rect x="57" y="410" width="422" height="16" fill="#E7EEF7"/>
-    <line x1="56" y1="426" x2="480" y2="426" stroke="#DCE4EE"/>
-    <text x="78" y="392" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">支柱一</text>
-    <text x="78" y="414" font-size="17.5" font-weight="700" fill="#0E2B4D">客群　五类分层</text>
+    <rect x="56" y="286" width="424" height="344" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
+    <rect x="56" y="286" width="424" height="62" rx="18" fill="url(#pillarHead)"/>
+    <rect x="57" y="332" width="422" height="16" fill="#E7EEF7"/>
+    <line x1="56" y1="348" x2="480" y2="348" stroke="#DCE4EE"/>
+    <text x="78" y="314" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">支柱一</text>
+    <text x="78" y="336" font-size="17.5" font-weight="700" fill="#0E2B4D">客群　五类分层</text>
 
-    <text x="78" y="456" font-size="11.5" fill="#8A98A6">每类一条短期主线，一条长期主线</text>
+    <text x="78" y="378" font-size="11.5" fill="#8A98A6">每类一条短期主线，一条长期主线</text>
 
-    <text x="78" y="488" font-size="13.5" font-weight="700" fill="#12304F">经销商</text>
-    <text x="182" y="488" font-size="12.5" fill="#5A6C7E">跑品 / 全域 SOP</text>
-    <text x="78" y="516" font-size="13.5" font-weight="700" fill="#12304F">人设型</text>
-    <text x="182" y="516" font-size="12.5" fill="#5A6C7E">人设突围 / 内容工业化</text>
-    <text x="78" y="544" font-size="13.5" font-weight="700" fill="#12304F">白牌贸易</text>
-    <text x="182" y="544" font-size="12.5" fill="#5A6C7E">做减法</text>
-    <text x="78" y="572" font-size="13.5" font-weight="700" fill="#12304F">新锐商家</text>
-    <text x="182" y="572" font-size="12.5" fill="#5A6C7E">冷启动 / 生意陪跑</text>
-    <text x="78" y="600" font-size="13.5" font-weight="700" fill="#12304F">传统品牌</text>
-    <text x="182" y="600" font-size="12.5" fill="#5A6C7E">节点 ＋ 四力主力</text>
+    <text x="78" y="410" font-size="13.5" font-weight="700" fill="#12304F">经销商</text>
+    <text x="182" y="410" font-size="12.5" fill="#5A6C7E">跑品 / 全域 SOP</text>
+    <text x="78" y="438" font-size="13.5" font-weight="700" fill="#12304F">人设型</text>
+    <text x="182" y="438" font-size="12.5" fill="#5A6C7E">人设突围 / 内容工业化</text>
+    <text x="78" y="466" font-size="13.5" font-weight="700" fill="#12304F">白牌贸易</text>
+    <text x="182" y="466" font-size="12.5" fill="#5A6C7E">做减法</text>
+    <text x="78" y="494" font-size="13.5" font-weight="700" fill="#12304F">新锐商家</text>
+    <text x="182" y="494" font-size="12.5" fill="#5A6C7E">冷启动 / 生意陪跑</text>
+    <text x="78" y="522" font-size="13.5" font-weight="700" fill="#12304F">传统品牌</text>
+    <text x="182" y="522" font-size="12.5" fill="#5A6C7E">节点 ＋ 四力主力</text>
 
-    <line x1="78" y1="626" x2="458" y2="626" stroke="#E5EBF3"/>
-    <text x="78" y="650" font-size="10.5" letter-spacing="3" fill="#8A98A6" font-weight="700">当前盘子</text>
-    <text x="78" y="674" font-size="12.5" fill="#4A5C6E">贸易商 <tspan font-weight="700" fill="#12304F">135 万 · 69.7%</tspan>　同比 <tspan fill="#1D7FC0" font-weight="700">+32%</tspan></text>
-    <text x="78" y="696" font-size="12.5" fill="#4A5C6E">新锐 <tspan font-weight="700" fill="#12304F">45 万 · 23.4%</tspan>　量级持平，信任等级升级</text>
+    <line x1="78" y1="548" x2="458" y2="548" stroke="#E5EBF3"/>
+    <text x="78" y="572" font-size="10.5" letter-spacing="3" fill="#8A98A6" font-weight="700">当前盘子</text>
+    <text x="78" y="596" font-size="12.5" fill="#4A5C6E">贸易商 <tspan font-weight="700" fill="#12304F">135 万 · 69.7%</tspan>　同比 <tspan fill="#1D7FC0" font-weight="700">+32%</tspan></text>
+    <text x="78" y="618" font-size="12.5" fill="#4A5C6E">新锐 <tspan font-weight="700" fill="#12304F">45 万 · 23.4%</tspan>　量级持平，信任等级升级</text>
 
     <!-- 柱二 · 品类 -->
-    <rect x="508" y="364" width="424" height="344" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
-    <rect x="508" y="364" width="424" height="62" rx="18" fill="url(#pillarHead)"/>
-    <rect x="509" y="410" width="422" height="16" fill="#E7EEF7"/>
-    <line x1="508" y1="426" x2="932" y2="426" stroke="#DCE4EE"/>
-    <text x="530" y="392" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">支柱二</text>
-    <text x="530" y="414" font-size="17.5" font-weight="700" fill="#0E2B4D">品类　三层判断</text>
+    <rect x="508" y="286" width="424" height="344" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
+    <rect x="508" y="286" width="424" height="62" rx="18" fill="url(#pillarHead)"/>
+    <rect x="509" y="332" width="422" height="16" fill="#E7EEF7"/>
+    <line x1="508" y1="348" x2="932" y2="348" stroke="#DCE4EE"/>
+    <text x="530" y="314" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">支柱二</text>
+    <text x="530" y="336" font-size="17.5" font-weight="700" fill="#0E2B4D">品类　三层判断</text>
 
-    <text x="530" y="456" font-size="11.5" fill="#8A98A6">从经验判断升级为有法可依，逐级收敛到清单</text>
+    <text x="530" y="378" font-size="11.5" fill="#8A98A6">从经验判断升级为有法可依，逐级收敛到清单</text>
 
-    <text x="530" y="488" font-size="13.5" font-weight="700" fill="#12304F">看差距</text>
-    <text x="530" y="508" font-size="12.5" fill="#5A6C7E">29 成分做腾讯 vs 抖音倍数差　<tspan fill="#1D7FC0" font-weight="700">蛹虫草 1312x · 黄芪 123x</tspan></text>
+    <text x="530" y="410" font-size="13.5" font-weight="700" fill="#12304F">看差距</text>
+    <text x="530" y="430" font-size="12.5" fill="#5A6C7E">29 成分做腾讯 vs 抖音倍数差　<tspan fill="#1D7FC0" font-weight="700">蛹虫草 1312x · 黄芪 123x</tspan></text>
 
-    <text x="530" y="538" font-size="13.5" font-weight="700" fill="#12304F">看自身</text>
-    <text x="530" y="558" font-size="12.5" fill="#5A6C7E">三维筛选　<tspan fill="#1D7FC0" font-weight="700">客单 ≥199 元 · 毛利 ≥75%</tspan> · 精准客群</text>
+    <text x="530" y="460" font-size="13.5" font-weight="700" fill="#12304F">看自身</text>
+    <text x="530" y="480" font-size="12.5" fill="#5A6C7E">三维筛选　<tspan fill="#1D7FC0" font-weight="700">客单 ≥199 元 · 毛利 ≥75%</tspan> · 精准客群</text>
 
-    <text x="530" y="588" font-size="13.5" font-weight="700" fill="#12304F">定优先级</text>
-    <text x="530" y="608" font-size="12.5" fill="#5A6C7E">四维打分排 P0–P4　<tspan fill="#1D7FC0" font-weight="700">灵芝 阿胶 西洋参 先行</tspan></text>
+    <text x="530" y="510" font-size="13.5" font-weight="700" fill="#12304F">定优先级</text>
+    <text x="530" y="530" font-size="12.5" fill="#5A6C7E">四维打分排 P0–P4　<tspan fill="#1D7FC0" font-weight="700">灵芝 阿胶 西洋参 先行</tspan></text>
 
-    <line x1="530" y1="630" x2="910" y2="630" stroke="#E5EBF3"/>
-    <text x="530" y="654" font-size="10.5" letter-spacing="3" fill="#8A98A6" font-weight="700">体质四象限</text>
-    <text x="530" y="678" font-size="12.5" fill="#4A5C6E"><tspan fill="#1D7FC0" font-weight="700">守</tspan> 平和·湿热·血瘀　<tspan fill="#4E8DC0" font-weight="700">拓</tspan> 阳虚　<tspan font-weight="700" fill="#4A5C6E">追</tspan> 阴虚　<tspan fill="#B4761F" font-weight="700">绕</tspan> 气虚</text>
-    <text x="530" y="698" font-size="11.5" fill="#7C8B9C">湿热质抖音为 0 是独占赛道；气虚差 52 倍不正面打</text>
+    <line x1="530" y1="552" x2="910" y2="552" stroke="#E5EBF3"/>
+    <text x="530" y="576" font-size="10.5" letter-spacing="3" fill="#8A98A6" font-weight="700">体质四象限</text>
+    <text x="530" y="600" font-size="12.5" fill="#4A5C6E"><tspan fill="#1D7FC0" font-weight="700">守</tspan> 平和·湿热·血瘀　<tspan fill="#4E8DC0" font-weight="700">拓</tspan> 阳虚　<tspan font-weight="700" fill="#4A5C6E">追</tspan> 阴虚　<tspan fill="#B4761F" font-weight="700">绕</tspan> 气虚</text>
+    <text x="530" y="620" font-size="11.5" fill="#7C8B9C">湿热质抖音为 0 是独占赛道；气虚差 52 倍不正面打</text>
 
     <!-- 柱三 · 能力 -->
-    <rect x="960" y="364" width="424" height="344" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
-    <rect x="960" y="364" width="424" height="62" rx="18" fill="url(#pillarHead)"/>
-    <rect x="961" y="410" width="422" height="16" fill="#E7EEF7"/>
-    <line x1="960" y1="426" x2="1384" y2="426" stroke="#DCE4EE"/>
-    <text x="982" y="392" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">支柱三</text>
-    <text x="982" y="414" font-size="17.5" font-weight="700" fill="#0E2B4D">能力　三条护城河</text>
+    <rect x="960" y="286" width="424" height="344" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
+    <rect x="960" y="286" width="424" height="62" rx="18" fill="url(#pillarHead)"/>
+    <rect x="961" y="332" width="422" height="16" fill="#E7EEF7"/>
+    <line x1="960" y1="348" x2="1384" y2="348" stroke="#DCE4EE"/>
+    <text x="982" y="314" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">支柱三</text>
+    <text x="982" y="336" font-size="17.5" font-weight="700" fill="#0E2B4D">能力　三条护城河</text>
 
-    <text x="982" y="456" font-size="11.5" fill="#8A98A6">通用四力之上，长出滋补行业专属能力</text>
+    <text x="982" y="378" font-size="11.5" fill="#8A98A6">通用四力之上，长出滋补行业专属能力</text>
 
-    <text x="982" y="488" font-size="13.5" font-weight="700" fill="#12304F">功效专项</text>
-    <text x="982" y="508" font-size="12.5" fill="#5A6C7E">27 个合规功效范围　<tspan fill="#1D7FC0" font-weight="700">CPV 8 月底 · AI 预审 9 月</tspan></text>
+    <text x="982" y="410" font-size="13.5" font-weight="700" fill="#12304F">功效专项</text>
+    <text x="982" y="430" font-size="12.5" fill="#5A6C7E">27 个合规功效范围　<tspan fill="#1D7FC0" font-weight="700">CPV 8 月底 · AI 预审 9 月</tspan></text>
 
-    <text x="982" y="538" font-size="13.5" font-weight="700" fill="#12304F">信任力专项</text>
-    <text x="982" y="558" font-size="12.5" fill="#5A6C7E">三农人设 1.0 → <tspan fill="#1D7FC0" font-weight="700">信任力 2.0</tspan>，五层链路</text>
+    <text x="982" y="460" font-size="13.5" font-weight="700" fill="#12304F">信任力专项</text>
+    <text x="982" y="480" font-size="12.5" fill="#5A6C7E">三农人设 1.0 → <tspan fill="#1D7FC0" font-weight="700">信任力 2.0</tspan>，五层链路</text>
 
-    <text x="982" y="588" font-size="13.5" font-weight="700" fill="#12304F">公私域闭环专项</text>
-    <text x="982" y="608" font-size="12.5" fill="#5A6C7E">公转私控风险 · 私转公撬预算　<tspan fill="#1D7FC0" font-weight="700">Q3 完成</tspan></text>
+    <text x="982" y="510" font-size="13.5" font-weight="700" fill="#12304F">公私域闭环专项</text>
+    <text x="982" y="530" font-size="12.5" fill="#5A6C7E">公转私控风险 · 私转公撬预算　<tspan fill="#1D7FC0" font-weight="700">Q3 完成</tspan></text>
 
-    <line x1="982" y1="630" x2="1362" y2="630" stroke="#E5EBF3"/>
-    <text x="982" y="654" font-size="10.5" letter-spacing="3" fill="#8A98A6" font-weight="700">加粉引流三条新链路</text>
-    <text x="982" y="678" font-size="12.5" fill="#4A5C6E">小程序直购　·　小店融合　·　小程序加粉</text>
-    <text x="982" y="698" font-size="11.5" fill="#7C8B9C">企微闭环收口，把风险链路迁到可控通道</text>
+    <line x1="982" y1="552" x2="1362" y2="552" stroke="#E5EBF3"/>
+    <text x="982" y="576" font-size="10.5" letter-spacing="3" fill="#8A98A6" font-weight="700">加粉引流三条新链路</text>
+    <text x="982" y="600" font-size="12.5" fill="#4A5C6E">小程序直购　·　小店融合　·　小程序加粉</text>
+    <text x="982" y="620" font-size="11.5" fill="#7C8B9C">企微闭环收口，把风险链路迁到可控通道</text>
 
-    <!-- 箭头 C -->
-    <line x1="268" y1="728" x2="268" y2="717" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="268" y="710"/>
-    <line x1="720" y1="728" x2="720" y2="717" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="720" y="710"/>
-    <line x1="1172" y1="728" x2="1172" y2="717" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="1172" y="710"/>
+    <!-- 箭头 · 双基石 → 三支柱 -->
+    <line x1="268" y1="650" x2="268" y2="639" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="268" y="632"/>
+    <line x1="720" y1="650" x2="720" y2="639" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="720" y="632"/>
+    <line x1="1172" y1="650" x2="1172" y2="639" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="1172" y="632"/>
 
     <!-- ══════════ 双基石 ══════════ -->
-    <rect x="56" y="732" width="1328" height="92" rx="18" fill="#F2F7FC"/>
-    <rect x="56" y="732" width="650" height="92" rx="18" fill="url(#stone)" stroke="#B4CFEA"/>
-    <rect x="56" y="756" width="4" height="44" rx="2" fill="#1D6FB8"/>
-    <text x="80" y="760" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">基石一</text>
-    <text x="80" y="786" font-size="17" font-weight="700" fill="#0E2B4D">九种体质人群国标　GB/T 46939—2025</text>
-    <text x="80" y="810" font-size="12" fill="#4A6480">2026-04-01 实施　|　<tspan fill="#1D6FB8" font-weight="700">让"品类适配 × 功效匹配"第一次有依据</tspan></text>
+    <rect x="56" y="654" width="1328" height="92" rx="18" fill="#F2F7FC"/>
+    <rect x="56" y="654" width="650" height="92" rx="18" fill="url(#stone)" stroke="#B4CFEA"/>
+    <rect x="56" y="678" width="4" height="44" rx="2" fill="#1D6FB8"/>
+    <text x="80" y="682" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">基石一</text>
+    <text x="80" y="708" font-size="17" font-weight="700" fill="#0E2B4D">九种体质人群国标　GB/T 46939—2025</text>
+    <text x="80" y="732" font-size="12" fill="#4A6480">2026-04-01 实施　|　<tspan fill="#1D6FB8" font-weight="700">让"品类适配 × 功效匹配"第一次有依据</tspan></text>
 
-    <rect x="734" y="732" width="650" height="92" rx="18" fill="url(#stone)" stroke="#B4CFEA"/>
-    <rect x="734" y="756" width="4" height="44" rx="2" fill="#1D6FB8"/>
-    <text x="758" y="760" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">基石二</text>
-    <text x="758" y="786" font-size="17" font-weight="700" fill="#0E2B4D">信任力 2.0</text>
-    <text x="758" y="810" font-size="12" fill="#4A6480">加粉转闭环 · 直购洗掉壳公司 · 新锐走向强信任　|　<tspan fill="#1D6FB8" font-weight="700">谁先完成，谁拿到长期入场券</tspan></text>
+    <rect x="734" y="654" width="650" height="92" rx="18" fill="url(#stone)" stroke="#B4CFEA"/>
+    <rect x="734" y="678" width="4" height="44" rx="2" fill="#1D6FB8"/>
+    <text x="758" y="682" font-size="10.5" letter-spacing="4" fill="#1D7FC0" font-weight="700">基石二</text>
+    <text x="758" y="708" font-size="17" font-weight="700" fill="#0E2B4D">信任力 2.0</text>
+    <text x="758" y="732" font-size="12" fill="#4A6480">加粉转闭环 · 直购洗掉壳公司 · 新锐走向强信任　|　<tspan fill="#1D6FB8" font-weight="700">谁先完成，谁拿到长期入场券</tspan></text>
 
-    <!-- 箭头 B -->
-    <line x1="268" y1="844" x2="268" y2="833" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="268" y="826"/>
-    <line x1="720" y1="844" x2="720" y2="833" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="720" y="826"/>
-    <line x1="1172" y1="844" x2="1172" y2="833" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="1172" y="826"/>
+    <!-- 箭头 · 三个诊断 → 双基石 -->
+    <line x1="268" y1="766" x2="268" y2="755" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="268" y="748"/>
+    <line x1="720" y1="766" x2="720" y2="755" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="720" y="748"/>
+    <line x1="1172" y1="766" x2="1172" y2="755" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
+    <use href="#chev" x="1172" y="748"/>
 
     <!-- ══════════ 三个诊断 ══════════ -->
-    <rect x="56" y="848" width="424" height="118" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
-    <rect x="56" y="872" width="4" height="70" rx="2" fill="#1D6FB8"/>
-    <circle cx="84" cy="874" r="3.4" fill="#1D7FC0"/>
-    <text x="98" y="878" font-size="13.5" font-weight="700" fill="#0E2B4D">诊断一　结构在变好</text>
-    <text x="80" y="910" font-size="14" fill="#4A5C6E">闭环占比 <tspan font-weight="700" fill="#12304F">30% <tspan fill="#1D7FC0">→ 46%</tspan></tspan>　33 万 → <tspan font-weight="700" fill="#12304F">89 万</tspan></text>
-    <text x="80" y="934" font-size="11.5" fill="#7C8B9C">增量 <tspan fill="#1D7FC0" font-weight="700">+56 万/日</tspan>　小店同比 +222%，直播贡献增量 52%</text>
-    <text x="80" y="954" font-size="11.5" fill="#93A1B0">闭环已成主战场　→　客群必须分层经营</text>
+    <rect x="56" y="770" width="424" height="118" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
+    <rect x="56" y="794" width="4" height="70" rx="2" fill="#1D6FB8"/>
+    <circle cx="84" cy="796" r="3.4" fill="#1D7FC0"/>
+    <text x="98" y="800" font-size="13.5" font-weight="700" fill="#0E2B4D">诊断一　结构在变好</text>
+    <text x="80" y="832" font-size="14" fill="#4A5C6E">闭环占比 <tspan font-weight="700" fill="#12304F">30% <tspan fill="#1D7FC0">→ 46%</tspan></tspan>　33 万 → <tspan font-weight="700" fill="#12304F">89 万</tspan></text>
+    <text x="80" y="856" font-size="11.5" fill="#7C8B9C">增量 <tspan fill="#1D7FC0" font-weight="700">+56 万/日</tspan>　小店同比 +222%，直播贡献增量 52%</text>
+    <text x="80" y="876" font-size="11.5" fill="#93A1B0">闭环已成主战场　→　客群必须分层经营</text>
 
-    <rect x="508" y="848" width="424" height="118" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
-    <rect x="508" y="872" width="4" height="70" rx="2" fill="#1D6FB8"/>
-    <circle cx="536" cy="874" r="3.4" fill="#8A98A6"/>
-    <text x="550" y="878" font-size="13.5" font-weight="700" fill="#0E2B4D">诊断二　打法有短板</text>
-    <text x="532" y="910" font-size="14" fill="#4A5C6E">品类<tspan font-weight="700" fill="#12304F">点状拓客</tspan>　哪个火跟哪个，缺系统判断</text>
-    <text x="532" y="934" font-size="11.5" fill="#7C8B9C">腾讯适合什么、比抖音差在哪，此前没有依据可循</text>
-    <text x="532" y="954" font-size="11.5" fill="#93A1B0">经验判断不可复制　→　品类选择要有国标做依据</text>
+    <rect x="508" y="770" width="424" height="118" rx="18" fill="#FFFFFF" stroke="#DCE4EE"/>
+    <rect x="508" y="794" width="4" height="70" rx="2" fill="#1D6FB8"/>
+    <circle cx="536" cy="796" r="3.4" fill="#8A98A6"/>
+    <text x="550" y="800" font-size="13.5" font-weight="700" fill="#0E2B4D">诊断二　打法有短板</text>
+    <text x="532" y="832" font-size="14" fill="#4A5C6E">品类<tspan font-weight="700" fill="#12304F">点状拓客</tspan>　哪个火跟哪个，缺系统判断</text>
+    <text x="532" y="856" font-size="11.5" fill="#7C8B9C">腾讯适合什么、比抖音差在哪，此前没有依据可循</text>
+    <text x="532" y="876" font-size="11.5" fill="#93A1B0">经验判断不可复制　→　品类选择要有国标做依据</text>
 
-    <rect x="960" y="848" width="424" height="118" rx="18" fill="#FDF7EE" stroke="#E5C79B"/>
-    <rect x="960" y="872" width="4" height="70" rx="2" fill="#C8873A"/>
-    <circle cx="988" cy="874" r="3.4" fill="#C8873A"/>
-    <text x="1002" y="878" font-size="13.5" font-weight="700" fill="#8A5A18">诊断三　风险搬了家</text>
-    <text x="984" y="910" font-size="14" fill="#5E4A32">加粉 42% → 21%　直购＋CID <tspan font-weight="700" fill="#3E2E1C">70 万</tspan>中仅 <tspan font-weight="700" fill="#B4761F">12 万</tspan>合规</text>
-    <text x="984" y="934" font-size="11.5" fill="#7E6A50">约 58 万是 OG 切换伪装 —— <tspan fill="#B4761F" font-weight="700">加粉换壳，猫鼠游戏升级</tspan></text>
-    <text x="984" y="954" font-size="11.5" fill="#9A8869">堵不住只能升维　→　靠信任力与闭环能力筛掉壳公司</text>
-
-    <!-- 箭头 A -->
-    <line x1="268" y1="986" x2="268" y2="975" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="268" y="968"/>
-    <line x1="720" y1="986" x2="720" y2="975" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="720" y="968"/>
-    <line x1="1172" y1="986" x2="1172" y2="975" stroke="#6E9BC4" stroke-opacity="0.8" stroke-width="1.5" stroke-linecap="round"/>
-    <use href="#chev" x="1172" y="968"/>
-
-    <!-- ══════════ H1 读数 ══════════ -->
-    <rect x="56" y="990" width="1328" height="76" rx="18" fill="#F7F9FC" stroke="#DFE7F1"/>
-    <text x="80" y="1020" font-size="10.5" letter-spacing="4" fill="#8A98A6" font-weight="700">H1 读数</text>
-    <text x="80" y="1046" font-size="16.5" font-weight="700" fill="#0E2B4D">规模仍在高增，增速已换挡</text>
-
-    <line x1="420" y1="1010" x2="420" y2="1046" stroke="#DFE7F1"/>
-    <text x="464" y="1032" font-size="21" font-weight="700" fill="#0E2B4D">3.6 亿</text>
-    <text x="464" y="1052" font-size="10.5" fill="#8A98A6">H1 累计</text>
-    <text x="620" y="1032" font-size="21" font-weight="700" fill="#0E2B4D">199 万</text>
-    <text x="620" y="1052" font-size="10.5" fill="#8A98A6">当前日耗</text>
-    <text x="780" y="1032" font-size="21" font-weight="700" fill="#1D7FC0">+68%</text>
-    <text x="780" y="1052" font-size="10.5" fill="#8A98A6">同比</text>
-    <text x="940" y="1032" font-size="21" font-weight="700" fill="#6D7D8E">+42% <tspan fill="#B4761F">→</tspan> <tspan fill="#B4761F">+18%</tspan></text>
-    <text x="940" y="1052" font-size="10.5" fill="#8A98A6">增速换挡：跑马圈地 → 精耕细作</text>
+    <rect x="960" y="770" width="424" height="118" rx="18" fill="#FDF7EE" stroke="#E5C79B"/>
+    <rect x="960" y="794" width="4" height="70" rx="2" fill="#C8873A"/>
+    <circle cx="988" cy="796" r="3.4" fill="#C8873A"/>
+    <text x="1002" y="800" font-size="13.5" font-weight="700" fill="#8A5A18">诊断三　风险搬了家</text>
+    <text x="984" y="832" font-size="14" fill="#5E4A32">加粉 42% → 21%　直购＋CID <tspan font-weight="700" fill="#3E2E1C">70 万</tspan>中仅 <tspan font-weight="700" fill="#B4761F">12 万</tspan>合规</text>
+    <text x="984" y="856" font-size="11.5" fill="#7E6A50">约 58 万是 OG 切换伪装 —— <tspan fill="#B4761F" font-weight="700">加粉换壳，猫鼠游戏升级</tspan></text>
+    <text x="984" y="876" font-size="11.5" fill="#9A8869">堵不住只能升维　→　靠信任力与闭环能力筛掉壳公司</text>
   </svg>
 
   <div class="legend">
@@ -288,7 +256,7 @@ svg text{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI
 
   <div class="foot">
     依据：企微文档《8.24 进京前更新版 · 传统滋补赛道 H2 增收策略分享》· 2026-08-25 整理<br>
-    口径：H1 数据为行业口径（3.6 亿 / 日耗 199 万 / 同比 +68%），与主计口径 QTD 282.7 万并存。
+    口径：图中消耗数据为行业口径，与主计口径 QTD 282.7 万并存。
   </div>
 
 </div>
