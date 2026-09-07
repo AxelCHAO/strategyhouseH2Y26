@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q4 造节 Roadmap · 双 11 × 秋冬进补</title>
+<style>
+:root{
+  --ink:#0F1B2D; --ink2:#3C4A5C; --ink3:#6B7787;
+  --blue:#0C447C; --blue2:#185FA5; --blue3:#378ADD; --blue-bg:#EDF3FA; --blue-line:#C5DAF0;
+  --amber:#854F0B; --amber2:#BA7517; --amber-bg:#FBF3E6;
+  --line:#E3E8EF; --line2:#EFF2F6; --bg:#F7F9FC; --card:#FFFFFF;
+  --red:#A32D2D; --red-bg:#FBEEEE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;padding:0 0 80px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+.hero{background:var(--card);border-bottom:1px solid var(--line);padding:44px 0 34px;margin-bottom:30px}
+.eyebrow{font-size:12px;letter-spacing:.14em;color:var(--blue2);font-weight:600;margin-bottom:12px}
+h1{font-size:31px;font-weight:600;letter-spacing:-.01em;line-height:1.32;margin-bottom:14px}
+.sub{font-size:15px;color:var(--ink2);max-width:790px;line-height:1.75}
+.meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--line2);display:flex;flex-wrap:wrap;gap:26px;font-size:12.5px;color:var(--ink3)}
+.meta b{color:var(--ink);font-weight:600}
+
+section{margin-bottom:38px}
+.sh{display:flex;align-items:baseline;gap:11px;margin-bottom:8px}
+.sn{font-size:12px;font-weight:600;color:var(--blue3);letter-spacing:.08em;padding-top:4px}
+h2{font-size:20px;font-weight:600;letter-spacing:-.005em}
+.sd{font-size:13.5px;color:var(--ink3);margin-bottom:18px;max-width:830px;line-height:1.7}
+h3{font-size:15px;font-weight:600;margin:22px 0 10px}
+h3:first-child{margin-top:0}
+p{font-size:14px;color:var(--ink2);margin-bottom:11px}
+strong{font-weight:600;color:var(--ink)}
+.hl{color:var(--blue);font-weight:600}
+.hla{color:var(--amber);font-weight:600}
+
+.ns{background:var(--card);border:1px solid var(--blue-line);border-radius:14px;padding:26px;border-left:4px solid var(--blue2)}
+.ns .lbl{font-size:12px;letter-spacing:.1em;color:var(--blue2);font-weight:600;margin-bottom:10px}
+.ns .big{font-size:21px;font-weight:600;line-height:1.55;letter-spacing:-.01em}
+.ns .note{font-size:13px;color:var(--ink3);margin-top:12px;padding-top:12px;border-top:1px solid var(--line2)}
+
+.mg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.m{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.m .k{font-size:12px;color:var(--ink3);margin-bottom:7px}
+.m .v{font-size:23px;font-weight:600;letter-spacing:-.02em;line-height:1.2}
+.m .d{font-size:12px;color:var(--ink3);margin-top:5px}
+.m.b{border-top:3px solid var(--blue3)} .m.b .v{color:var(--blue)}
+.m.a{border-top:3px solid var(--amber2)} .m.a .v{color:var(--amber)}
+
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13px;margin:14px 0}
+th{background:#F4F7FB;text-align:left;padding:11px 14px;font-weight:600;font-size:12.5px;color:var(--ink);border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top;line-height:1.65}
+tr:last-child td{border-bottom:none}
+td b{color:var(--ink)}
+
+.tt{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.tk{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.tk.e{border-top:3px solid var(--blue3)}
+.tk.r{border-top:3px solid var(--amber2)}
+.tk .tag{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:3px 9px;border-radius:5px;margin-bottom:11px}
+.tk.e .tag{background:var(--blue-bg);color:var(--blue)}
+.tk.r .tag{background:var(--amber-bg);color:var(--amber)}
+.tk h4{font-size:16.5px;font-weight:600;margin-bottom:5px}
+.tk .aim{font-size:13px;color:var(--ink3);margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--line2)}
+.kv{display:flex;gap:10px;font-size:13px;padding:6px 0;line-height:1.6}
+.kv .kk{flex:0 0 64px;color:var(--ink3);font-size:12.5px}
+.kv .vv{flex:1;color:var(--ink2)}
+
+.ph{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:14px}
+.ph-h{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ph-h .pid{font-size:11.5px;font-weight:600;letter-spacing:.1em;color:#fff;background:var(--ink2);padding:4px 10px;border-radius:5px}
+.ph.p2 .ph-h .pid{background:var(--blue2)}
+.ph.p3 .ph-h .pid{background:var(--amber2)}
+.ph-h .pt{font-size:17px;font-weight:600}
+.ph-h .pd{font-size:13px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.ph-h .pg{margin-left:auto;display:flex;gap:24px;text-align:right}
+.ph-h .pg span{font-size:11.5px;color:var(--ink3);display:block;line-height:1.4}
+.ph-h .pg b{font-size:17px;font-weight:600;color:var(--ink)}
+.ph.p2 .ph-h .pg b{color:var(--blue)}
+.ph.p3 .ph-h .pg b{color:var(--amber)}
+.ph-b{padding:20px 24px}
+.ph-b table{margin:0;border:none;border-radius:0}
+.ph-b th{background:transparent;border-bottom:1px solid var(--line);padding-left:0}
+.ph-b td{padding-left:0}
+.ph-b td:last-child,.ph-b th:last-child{padding-right:0}
+.owncol{color:#A9B1BC;font-size:12px}
+.goal{font-size:13.5px;color:var(--ink2);background:var(--blue-bg);border-radius:9px;padding:12px 15px;margin-bottom:16px;line-height:1.7}
+.ph.p3 .goal{background:var(--amber-bg)}
+.deliv{margin-top:16px;padding-top:14px;border-top:1px solid var(--line2);font-size:13px;color:var(--ink2)}
+.deliv b{display:block;font-size:12px;letter-spacing:.06em;color:var(--ink3);margin-bottom:7px;font-weight:600}
+
+ul{list-style:none;margin:10px 0}
+li{font-size:13.5px;color:var(--ink2);padding-left:16px;position:relative;margin-bottom:7px;line-height:1.7}
+li::before{content:"";position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--blue3)}
+
+.co{border-radius:11px;padding:15px 18px;font-size:13.5px;line-height:1.72;margin:14px 0}
+.co.i{background:var(--blue-bg);border-left:3px solid var(--blue2);color:var(--ink2)}
+.co.w{background:var(--red-bg);border-left:3px solid var(--red);color:var(--ink2)}
+.co .t{font-weight:600;color:var(--ink);display:block;margin-bottom:5px}
+
+.jq{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.jc{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:18px 19px;border-top:3px solid var(--amber2)}
+.jc.pre{border-top-color:var(--blue3)}
+.jc .jh{display:flex;align-items:baseline;gap:8px;margin-bottom:5px}
+.jc .jn{font-size:16.5px;font-weight:600}
+.jc .jd{font-size:12px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.jc .jr{font-size:11.5px;font-weight:600;color:var(--amber);background:var(--amber-bg);display:inline-block;padding:2px 8px;border-radius:5px;margin-bottom:12px}
+.jc.pre .jr{color:var(--blue);background:var(--blue-bg)}
+.jl{font-size:12.5px;color:var(--ink2);line-height:1.65;margin-bottom:9px}
+.jl b{display:block;font-size:11px;letter-spacing:.05em;color:var(--ink3);font-weight:600;margin-bottom:2px}
+
+.tm th:first-child{width:96px}
+.tm td:first-child{font-weight:600;color:var(--ink)}
+.tm td:first-child span{font-size:12px;color:var(--ink3);font-weight:400}
+
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.d-r{background:#C0392B} .d-y{background:#D89A16} .d-g{background:#4E8B2A}
+
+.dec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px;display:flex;gap:15px;align-items:flex-start}
+.dec .no{flex:0 0 24px;height:24px;border-radius:6px;background:var(--blue-bg);color:var(--blue);font-size:12.5px;font-weight:600;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.dec .body{flex:1}
+.dec h4{font-size:14.5px;font-weight:600;margin-bottom:3px}
+.dec p{font-size:13px;margin-bottom:0}
+
+footer{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:12px;color:var(--ink3);line-height:1.8}
+
+@media (max-width:900px){
+  .mg,.jq{grid-template-columns:repeat(2,1fr)}
+  .tt{grid-template-columns:1fr}
+  .wrap{padding:0 18px}
+  h1{font-size:25px}
+  th,td{padding:9px 10px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">食品饮料一中心 · Q4 造节 ROADMAP</div>
+    <h1>双 11 × 秋冬进补：一场战役、两个客群、三个 Phase</h1>
+    <p class="sub">
+      Q4 把「双 11」与「秋冬进补」合并为一场跨季战役。中心 9 月大促已被定义为双 11 的大促产品演练，
+      Q4 属<strong>接棒放大</strong>而非另起一役。核心设计是<strong>客群错峰</strong>——
+      双 11 用电商客群把峰值拉到最高，秋冬进补用新锐客群把低谷垫到最高；
+      并首次引入中台、流量、产品、审核四方共建，把节点从单一行业线动作升级为中心级联合战役。
+    </p>
+    <div class="meta">
+      <span>战役周期 <b>2026/10/09 — 12/21</b>（10.5 周，冬至收官）</span>
+      <span>双主题 <b>健康囤货节 × 秋冬食养季</b></span>
+      <span>四方共建 <b>中台 · 流量 · 产品 · 审核</b></span>
+      <span>版本 <b>v1.1 讨论稿 · 2026-09-07</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- 00 -->
+<section>
+  <div class="sh"><span class="sn">00</span><h2>战役定义与北极星</h2></div>
+  <p class="sd">造节的价值不在某一天的峰值截图，而在整个 Q4 的水位被抬升、且节后不塌回原位。因此北极星设一个、地板设一个，全部以相对增速衡量。</p>
+
+  <div class="ns">
+    <div class="lbl">NORTH STAR</div>
+    <div class="big">造节周期（10/09—12/21）日耗相对节前基线 <span class="hl">+23%</span>，<br>且食养季地板不低于基线 <span class="hla">+17%</span>。</div>
+    <div class="note"><strong>地板指标是本次造节与以往「冲高即回落」的根本区别。</strong>峰值靠电商客群的节点爆发，地板靠新锐客群的节气性复购，二者错峰互补——峰值好看但地板塌了，等于没做。</div>
+  </div>
+
+  <div class="mg">
+    <div class="m"><div class="k">Phase 1 蓄水</div><div class="v">+7%</div><div class="d">内容与货盘先行</div></div>
+    <div class="m b"><div class="k">Phase 2 爆发均值</div><div class="v">+29%</div><div class="d">峰值日 +54%</div></div>
+    <div class="m a"><div class="k">Phase 3 地板</div><div class="v">+17%</div><div class="d">节后不塌回</div></div>
+    <div class="m"><div class="k">周期消耗结构</div><div class="v">2 : 3 : 5</div><div class="d">P1 : P2 : P3 占比</div></div>
+  </div>
+
+  <div class="co i">
+    <span class="t">为什么全篇用相对增速，不用绝对日耗</span>
+    这是中心层面的联合项目，覆盖多条行业线与多类客群，<strong>绝对日耗只反映单一组的消耗波动，不构成中心级判据</strong>。
+    因此目标、监控、复盘统一采用两个口径：<strong>相对节前基线的增速</strong> 与 <strong>占整个节点周期的消耗比例</strong>。
+    各行业线可按同一逻辑代入自身基数横向对齐，避免因基数差异无法比较。
+  </div>
+</section>
+
+<!-- 01 -->
+<section>
+  <div class="sh"><span class="sn">01</span><h2>客群双轨：两个节点、两类客户、两套打法</h2></div>
+  <p class="sd">双节合一的设计核心在于客群分轨。同一套动作打两类客户必然稀释，因此拆成两条并行主线，各有各的节点、目标与主抓链路。</p>
+
+  <div class="tt">
+    <div class="tk e">
+      <span class="tag">TRACK A · 双 11</span>
+      <h4>电商客群</h4>
+      <div class="aim">目的：节点更爆的冲高收入</div>
+      <div class="kv"><span class="kk">Owner</span><span class="vv"><b>柯芷岚</b></span></div>
+      <div class="kv"><span class="kk">客群特征</span><span class="vv">品牌化、已有电商大促心智、囤货属性强、看重 GMV 与 ROI 兑现</span></div>
+      <div class="kv"><span class="kk">主抓链路</span><span class="vv">小店 · 直播 · CID · 互选与如翼</span></div>
+      <div class="kv"><span class="kk">打法内核</span><span class="vv">预算集中释放 + 会场与活动标识 + 人群蓄水 + 大场与内容双峰加热</span></div>
+      <div class="kv"><span class="kk">节点目标</span><span class="vv"><b class="hl">爆发期相对基线 +60%</b></span></div>
+    </div>
+
+    <div class="tk r">
+      <span class="tag">TRACK B · 秋冬进补</span>
+      <h4>新锐客群</h4>
+      <div class="aim">目的：低谷不低的快速收入回温</div>
+      <div class="kv"><span class="kk">Owner</span><span class="vv"><b>尤丽琴</b></span></div>
+      <div class="kv"><span class="kk">客群特征</span><span class="vv">跑品导向、对节气与功效敏感、素材消耗量大、看重起量速度与出价空间</span></div>
+      <div class="kv"><span class="kk">主抓链路</span><span class="vv">直购 · 加粉 · 自营直播 · CID</span></div>
+      <div class="kv"><span class="kk">打法内核</span><span class="vv">节气功效货架 + 素材批产 + 私域复购唤醒 + 扶持分波投放</span></div>
+      <div class="kv"><span class="kk">节点目标</span><span class="vv"><b class="hla">食养季相对基线 +23%</b></span></div>
+    </div>
+  </div>
+
+  <div class="co i">
+    <span class="t">错峰的意义：整个周期每一周都有一条主线在冲高</span>
+    两轨的客群结构在 Phase 2 与 Phase 3 <strong>完全反转</strong>——爆发期由电商客群贡献主要增量，食养季由新锐客群接棒。
+    这不是把预算平摊，而是让两类客群的天然高峰首尾相接：<strong>双 11 结束的那一周，正是进补心智起势的那一周</strong>。
+    因此周期内不存在「节后空档」，也不需要靠单点客户硬撑水位。
+  </div>
+
+  <div class="co w">
+    <span class="t">双轨必须先解决的合规错位</span>
+    蓝帽品类<strong>禁止达人代言与专家背书</strong>，种草仅部分品类可用；跨境保健<strong>非大贸不准入小店与直播</strong>。
+    这意味着 Track A 的达播、KOC、互选打法<strong>不能平移到 Track B 的蓝帽客户</strong>——Track B 蓝帽只能走自营直播、直购、加粉；
+    跨境客户在双 11 只能走直购与 CID。<strong>四方协同中「审核」一方的第一优先级，就是在 Phase 1 内把这条边界给出可执行清单。</strong>
+  </div>
+</section>
+
+<!-- 02 节气 -->
+<section>
+  <div class="sh"><span class="sn">02</span><h2>节气节奏：把一次大促拆成四波</h2></div>
+  <p class="sd">秋冬进补最大的资产是节气自带的内容日历与消费心智。<strong>把「一次大促」拆成「四个连续小节点」，是维持地板、避免弹药一次性烧完的核心机制。</strong>每波配套：功效主题 × 商品清单 × 素材包 × 出价与扶持节奏。</p>
+
+  <div class="jq">
+    <div class="jc pre">
+      <div class="jh"><span class="jn">立冬</span><span class="jd">11/07</span></div>
+      <div class="jr">心智预埋 · 落在 D11 窗口内</div>
+      <div class="jl"><b>功效主题</b>御寒开补、进补开季</div>
+      <div class="jl"><b>内容与货盘</b>借双 11 高流量做食养季内容预热；进补开季话题上线；节气礼赠与囤装并行陈列</div>
+      <div class="jl"><b>投放动作</b>不单独抢预算，用爆发期流量把「进补开始了」的心智打出去；新锐客群素材开始换季</div>
+      <div class="jl"><b>扶持节奏</b>不占用食养季弹药</div>
+    </div>
+
+    <div class="jc">
+      <div class="jh"><span class="jn">小雪</span><span class="jd">11/22</span></div>
+      <div class="jr">第一波 · 食养季启动</div>
+      <div class="jl"><b>功效主题</b>补气血、暖身驱寒</div>
+      <div class="jl"><b>内容与货盘</b>汤羹与冲饮类先起量（决策轻、复购快）；D11 沉淀的加粉与会员人群做第一轮唤醒</div>
+      <div class="jl"><b>投放动作</b>直购与加粉双链路提量；自营直播排期加密；爆发期爆款素材做节气化改写</div>
+      <div class="jl"><b>扶持节奏</b>食养季第一档，重在把水位快速拉回地板线</div>
+    </div>
+
+    <div class="jc">
+      <div class="jh"><span class="jn">大雪</span><span class="jd">12/07</span></div>
+      <div class="jr">第二波 · 全季峰值</div>
+      <div class="jl"><b>功效主题</b>养肾、膏方、深度调补</div>
+      <div class="jl"><b>内容与货盘</b>高客单进补品主推；专业型内容与功效讲解为主，严守背书合规边界</div>
+      <div class="jl"><b>投放动作</b>食养季主攻窗口，拓新与提价并进；功效图谱与医典卡全量应用；缺口在此波集中补量</div>
+      <div class="jl"><b>扶持节奏</b>食养季最大一档，配合客户提预算</div>
+    </div>
+
+    <div class="jc">
+      <div class="jh"><span class="jn">冬至</span><span class="jd">12/21</span></div>
+      <div class="jr">第三波 · 收官</div>
+      <div class="jl"><b>功效主题</b>进补最强心智、节令仪式感</div>
+      <div class="jl"><b>内容与货盘</b>汤羹礼赠与年末囤货打通；顺势衔接年货节心智做跨季承接</div>
+      <div class="jl"><b>投放动作</b>复购人群集中收割；全周期战报与案例同步产出；为年货节留出货盘与素材资产</div>
+      <div class="jl"><b>扶持节奏</b>收尾一档，向年货节做过渡</div>
+    </div>
+  </div>
+
+  <div class="co i">
+    <span class="t">四波节奏的三条设计原则</span>
+    ① <strong>轻重交替</strong>——小雪主打决策轻、复购快的品类快速拉回水位，大雪主打高客单深度调补做峰值，避免连续两波都压高客单；
+    ② <strong>扶持分档不一次性烧完</strong>——四波各有档位，任一波低于预期都还有下一波可调；
+    ③ <strong>每波都留资产</strong>——素材、货盘、人群逐波沉淀，冬至那波直接成为年货节的启动库存。
+  </div>
+</section>
+
+<!-- 03 Roadmap -->
+<section>
+  <div class="sh"><span class="sn">03</span><h2>四阶段 Roadmap</h2></div>
+  <p class="sd">沿用中心节点运营 SOP 的六大提收方向骨架（全场景 / 自营提收 / 分销提收 / 生态特色 / 政策汇总 / 培训宣推战报），按 Phase 重排优先级。各项 Owner 待联席会认领后回填。</p>
+
+  <div class="ph">
+    <div class="ph-h">
+      <span class="pid">PHASE 0</span>
+      <span class="pt">立项期</span>
+      <span class="pd">9/15 — 10/8（3.5 周）</span>
+      <div class="pg">
+        <div><span>周期消耗占比</span><b>—</b></div>
+        <div><span>相对增速</span><b>持平</b></div>
+      </div>
+    </div>
+    <div class="ph-b">
+      <div class="goal"><strong>唯一目标：把「四方共建」从意愿变成有名有姓有交付时间的一张表。</strong>这一阶段不追收入，追立项完成度——如果 10/8 前四方接口人、扶持钱包、产品排期没落地，Phase 2 一定打不响。</div>
+      <table>
+        <thead><tr><th style="width:118px">方向</th><th>关键动作</th><th style="width:88px">Owner</th></tr></thead>
+        <tbody>
+          <tr><td>立项与治理</td><td>向中心提报「Q4 双节合一」立项；建 Q4 造节 SOP 在线表，复用现有表结构（运营场景 / 核心目标 / 目标拆分 / 交付维度 / 接口人 / 卡点 / 交付时间 / 双周报监控维度）</td><td class="owncol">待认领</td></tr>
+          <tr><td>目标口径</td><td>各客群与各 Phase 的相对增速目标拍板；明确考核口径与归属计算方式；统一「相对增速 + 周期消耗占比」两个对齐口径</td><td class="owncol">待认领</td></tr>
+          <tr><td>四方 kick-off</td><td>召开中台 / 流量 / 产品 / 审核四方联席会，各方认领交付项与交付时间（详见第 04 节矩阵）</td><td class="owncol">待认领</td></tr>
+          <tr><td>政策汇总</td><td>Q4 节点扶持钱包提报，延续现有行业扶持通路；智券、节点人群包、达人激励的申报窗口摸清</td><td class="owncol">待认领</td></tr>
+          <tr><td>客户预沟通</td><td>两轨各锁定一批节点主力客户，提前拿预算意向与货盘承诺；重点客户盘单独过一轮</td><td class="owncol">待认领</td></tr>
+        </tbody>
+      </table>
+      <div class="deliv"><b>阶段交付物</b>Q4 造节 SOP 在线表（含四方认领）· 目标与口径拍板结论 · 四方联席会纪要 · 节点主力客户名单 · 扶持提报清单</div>
+    </div>
+  </div>
+
+  <div class="ph">
+    <div class="ph-h">
+      <span class="pid">PHASE 1</span>
+      <span class="pt">预热筹备期</span>
+      <span class="pd">10/9 — 10/24（2.5 周）</span>
+      <div class="pg">
+        <div><span>周期消耗占比</span><b>约 20%</b></div>
+        <div><span>相对增速</span><b>+7%</b></div>
+      </div>
+    </div>
+    <div class="ph-b">
+      <div class="goal"><strong>三件事：热点识别、爆品识别、内容储备。</strong>加上一件决定爆发期上限却容易被忽略的事——<strong>审核预审与加白提额必须在这一阶段跑完</strong>，否则 D11 当天素材卡审、账户限额，货备好了也打不出去。</div>
+      <table>
+        <thead><tr><th style="width:118px">方向</th><th>关键动作</th><th style="width:88px">Owner</th></tr></thead>
+        <tbody>
+          <tr><td><b>热点识别</b></td><td>联合产品侧拉双主题搜索与内容热度榜：功效词热度（对齐功效图谱词库）、节气关键词（立冬 / 小雪 / 大雪 / 冬至）、去年同期礼赠与囤货心智商品清单</td><td class="owncol">待认领</td></tr>
+          <tr><td><b>爆品识别</b></td><td>沿用现有拓品机制，产出 Q4 双主题候选品库：Track A 大促囤货装与礼赠装；Track B 节气进补品（汤羹 / 冲饮 / 膏方 / 参类 / 骨健康 / 养肝）。<b>在投拓品覆盖率目标翻倍</b></td><td class="owncol">待认领</td></tr>
+          <tr><td><b>内容储备</b></td><td>节点创意 skills 上线（双 11 与秋冬进补双模板）；AIGC 批产素材，Track A 竖版视频为主、Track B 功效讲解型为主（严守背书合规边界）；互选与 KOC 达人货盘前置建联</td><td class="owncol">待认领</td></tr>
+          <tr><td><b>审核前置</b><span style="color:var(--red)"> 关键</span></td><td>节点素材预审绿色通道开通；功效词可用与禁用清单下发；引证规则与医典卡在节点素材中的用法确认；主体加白与账户提额批量提前跑完</td><td class="owncol">待认领</td></tr>
+          <tr><td>流量蓄水</td><td>确认节点版位激励档位与撬动比；低渗透客户批量补基建（此类自动扶持历史上常因客户不知情而错过）；优质版位渗透提升</td><td class="owncol">待认领</td></tr>
+          <tr><td>培训宣推</td><td>Q4 造节线上培训（选品洞察 / 资源抓手 / 投放工具 / 扶持政策）；双主题话题活动预热与物料下发</td><td class="owncol">待认领</td></tr>
+        </tbody>
+      </table>
+      <div class="deliv"><b>阶段交付物</b>双主题热点榜与选品洞察地图 · Q4 候选爆品库（分轨）· 节点素材库 · 功效词节点可用清单 · 加白提额完成台账 · 培训材料与话题物料</div>
+    </div>
+  </div>
+
+  <div class="ph p2">
+    <div class="ph-h">
+      <span class="pid">PHASE 2</span>
+      <span class="pt">D11 爆发期</span>
+      <span class="pd">10/25 — 11/14（3 周）</span>
+      <div class="pg">
+        <div><span>周期消耗占比</span><b>约 30%</b></div>
+        <div><span>相对增速</span><b>+29%</b></div>
+      </div>
+    </div>
+    <div class="ph-b">
+      <div class="goal"><strong>Track A 电商客群主战场，冲全年最高峰，峰值日目标相对基线 +54%。</strong>三个子窗口：预售蓄水（10/25—10/31）、正式爆发（11/1—11/11）、返场收尾（11/12—11/14）。Track B 本阶段以「维持 + 借势囤货」为主，不抢资源。</div>
+      <table>
+        <thead><tr><th style="width:118px">子窗口</th><th>关键动作</th><th style="width:88px">Owner</th></tr></thead>
+        <tbody>
+          <tr><td><b>预售蓄水</b><br><span style="font-size:12px;color:var(--ink3)">10/25—10/31</span></td><td>Track A 客户预算集中释放；小店大促活动标识与会场同步；人群蓄水（节点人群包 + LTV 破圈）；直播大场排期锁定；预售定金玩法素材上线</td><td class="owncol">待认领</td></tr>
+          <tr><td><b>正式爆发</b><br><span style="font-size:12px;color:var(--ink3)">11/1—11/11</span></td><td>全店托管与智投置信优化开到最大；智券与激励在峰值日集中投放；流量侧版位激励峰值倾斜；CID 链路冲高（跨境客群唯一有效通路）；达播大场与互选内容在 11/1、11/11 双峰加热</td><td class="owncol">待认领</td></tr>
+          <tr><td><b>返场收尾</b><br><span style="font-size:12px;color:var(--ink3)">11/12—11/14</span></td><td>返场承接未转化人群（再营销扶持）；<b>关键动作：向 Phase 3 做客群交接</b>——把双 11 沉淀的加粉与会员人群，转成 Track B 食养季的复购与私域基本盘</td><td class="owncol">待认领</td></tr>
+          <tr><td>审核保障</td><td>爆发期审核值班机制（峰值日素材驳回 4 小时内响应）；违规修复通道；风控异动实时预警，防止头部客户在峰值日因合规问题掉量</td><td class="owncol">待认领</td></tr>
+          <tr><td>Track B 维持</td><td>不抢双 11 资源，但借「囤货」心智做进补礼赠与囤装；素材与货盘为 Phase 3 预热；立冬（11/7）在此窗口内完成进补开季心智预埋</td><td class="owncol">待认领</td></tr>
+        </tbody>
+      </table>
+      <div class="deliv"><b>阶段交付物</b>D11 全周期战报（峰值日与全周期双视角）· Track A 客户效果案例 · 人群资产交接台账 · 审核保障复盘</div>
+    </div>
+  </div>
+
+  <div class="ph p3">
+    <div class="ph-h">
+      <span class="pid">PHASE 3</span>
+      <span class="pt">食养季</span>
+      <span class="pd">11/15 — 12/21（5.5 周）</span>
+      <div class="pg">
+        <div><span>周期消耗占比</span><b>约 50%</b></div>
+        <div><span>相对增速</span><b>+17%</b></div>
+      </div>
+    </div>
+    <div class="ph-b">
+      <div class="goal"><strong>Track B 新锐客群主战场，解决「双 11 后收入塌方」这个老问题。</strong>按小雪、大雪、冬至三波节气小节点推进（详见第 02 节）。<strong>这一阶段的成败决定整个造节是否成立</strong>——周期消耗占比最高的恰恰是这一段，它不是收尾，是主体。</div>
+      <table>
+        <thead><tr><th style="width:118px">方向</th><th>关键动作</th><th style="width:88px">Owner</th></tr></thead>
+        <tbody>
+          <tr><td><b>节气货架</b></td><td>三波节气小高峰，每波配套功效主题 × 商品清单 × 素材包 × 出价指引；轻重交替（小雪走轻决策快复购，大雪走高客单深度调补）</td><td class="owncol">待认领</td></tr>
+          <tr><td><b>缺口修复</b><span style="color:var(--red)"> 最高优先</span></td><td>对增速为负的客群做逐户排查定性（主动收缩还是链路故障），走链路排查 SOP；同步用节气货架补新增量，不把缺口全押在老客户回补上</td><td class="owncol">待认领</td></tr>
+          <tr><td><b>去单点化</b></td><td>当前增量集中在个别客户，脆弱性高。食养季目标：<b>主力客户数翻倍以上、TOP5 集中度下降</b>，把增长从个别客户摊薄到货盘与内容机制上</td><td class="owncol">待认领</td></tr>
+          <tr><td><b>复购与私域</b></td><td>承接 Phase 2 交接的人群资产：加粉链路做进补期复购唤醒；会员做节气复购；企微与小程序闭环承接。进补品类的高复购属性在此阶段兑现</td><td class="owncol">待认领</td></tr>
+          <tr><td>产品能力</td><td>功效图谱与医典卡全量应用；四力生意诊断在食养季主力客户做一线验证</td><td class="owncol">待认领</td></tr>
+          <tr><td>收官复盘</td><td>冬至全周期战报；双轨模式复盘（峰值与地板双指标达成）；产出可复用的「双节合一」中心级 SOP 模板，供年货节直接接棒</td><td class="owncol">待认领</td></tr>
+        </tbody>
+      </table>
+      <div class="deliv"><b>阶段交付物</b>三波节气货架方案与素材包 · 缺口攻坚台账 · 客户结构变化报告 · 复购人群兑现数据 · 全周期复盘与双节合一 SOP 模板</div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sh"><span class="sn">04</span><h2>四方协同矩阵</h2></div>
+  <p class="sd">这是本次造节与以往最大的差别。以往节点是行业线自己在跑、四方被动支持；本次要求四方在 Phase 0 就<strong>认领交付项与交付时间</strong>，并进入统一的双周报监控。下表为建议认领清单，具体接口人待联席会确认。</p>
+
+  <table class="tm">
+    <thead><tr>
+      <th>协同方</th><th>Phase 1 预热筹备</th><th>Phase 2 D11 爆发</th><th>Phase 3 食养季</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td>中台<br><span>商推 / 商平</span></td>
+        <td>双主题拓品池搭建（覆盖率目标翻倍）；小店大促活动标识与会场资源位；节点扶持钱包排布（扶持金 / 智券 / 达人激励）；节点人群包</td>
+        <td>全店托管与智投置信优化峰值放开；智券在峰值日集中释放；小店大促会场承接；再营销激励</td>
+        <td>三波节气的扶持分档排布（不能一次性烧完在双 11）；复购人群包；会员复购工具</td>
+      </tr>
+      <tr>
+        <td>流量<br><span>微广 / PCAD</span></td>
+        <td>节点版位激励档位与撬动比确认；低渗透客户批量补基建；优质版位渗透提升</td>
+        <td>视频号与朋友圈峰值日流量倾斜；大场直播流量支持；聚合广告节点位；峰值扶持</td>
+        <td>三波节气的流量节奏配合，避免双 11 后流量断崖；非视频号版位补量</td>
+      </tr>
+      <tr>
+        <td>产品<br><span>AI 能力</span></td>
+        <td>节点创意 skills（双模板）；AIGC 素材批产；AI 热点与选品洞察；功效图谱与医典卡节点适配</td>
+        <td>AIGC 峰值素材供给，应对高频卡审后的快速补量；素材衍生与违规修复自动化</td>
+        <td>功效图谱与医典卡全量应用；<b>四力生意诊断一线验证</b></td>
+      </tr>
+      <tr>
+        <td>审核<br><span>风控审核</span></td>
+        <td><b>节点素材预审绿通</b>；功效词节点可用与禁用清单；引证规则确认；主体加白与账户提额批量前置；达人代言边界书面确认</td>
+        <td><b>峰值期审核值班</b>（驳回 4 小时响应）；违规修复通道；头部客户风控异动实时预警</td>
+        <td>节气功效素材的滚动审核口径（进补类功效声称是高频卡审区）；审核报告反馈进选品</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="co i">
+    <span class="t">四方协同能不能落地，取决于一件事</span>
+    四方都有自己的 OKR，靠「帮个忙」的方式必然排不上期。建议在 Phase 0 联席会上做两件事：
+    <strong>① 把每一方的交付项写进 Q4 造节 SOP 在线表，带交付时间与卡点列，纳入双周报公开跟进</strong>；
+    <strong>② 为每一方明确「这场造节能给你什么」</strong>——中台拿产品能力在真实大促下的渗透率与 showcase，流量拿版位撬动比数据，
+    产品拿 AI 创意与诊断能力的一线验证案例，审核拿高风险品类在大促下的预审机制样板。互惠说清楚，排期才会给。
+  </div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sh"><span class="sn">05</span><h2>监控与治理机制</h2></div>
+  <p class="sd">直接对齐中心现有节点 SOP 的节奏设计，保证战报能被中心直接采用，不用二次加工。</p>
+
+  <table>
+    <thead><tr><th style="width:148px">节奏</th><th style="width:130px">时间</th><th>监控内容</th></tr></thead>
+    <tbody>
+      <tr><td>立项完成度检查</td><td>10/8</td><td>四方认领是否闭环、目标是否拍板、主力客户名单是否到位。<b>未闭环则 Phase 1 延后而非硬推</b></td></tr>
+      <tr><td>第 1 次双周报</td><td>10/22</td><td>蓄水增速是否达 +7%；拓品覆盖率；素材储备量；加白提额完成率；四方交付进度</td></tr>
+      <tr><td>D11 峰值日报</td><td>11/1—11/11 每日</td><td>两轨增速、峰值日增速、审核驳回率、扶持消耗进度。<b>峰值期改日报</b></td></tr>
+      <tr><td>第 2 次双周报</td><td>11/12</td><td>D11 全周期达成（均值 +29% / 峰值 +54%）；人群资产交接量；Track A 案例产出</td></tr>
+      <tr><td>第 3 次双周报</td><td>11/26</td><td>小雪波效果；食养季地板是否守住 +17%；缺口修复进展；去单点化进度</td></tr>
+      <tr><td>第 4 次双周报</td><td>12/10</td><td>大雪波效果；复购兑现；两轨对 Q4 目标达成率</td></tr>
+      <tr><td>全周期战报</td><td>12/22（冬至次日）</td><td>双指标复盘（峰值与地板）；双轨模式有效性结论；双节合一 SOP 模板交付中心</td></tr>
+    </tbody>
+  </table>
+
+  <h3>监控维度（沿用中心 SOP 列结构）</h3>
+  <ul>
+    <li><strong>全场景</strong>：整体日耗相对增速 / 核心链路结构占比 / 应季品数量与消耗占比</li>
+    <li><strong>客群双轨</strong>：Track A 与 Track B 分别对目标增速（本次新增的关键维度，不能只看总数）</li>
+    <li><strong>周期结构</strong>：各 Phase 实际消耗占比 vs 规划的 2 : 3 : 5，偏离即预警扶持节奏出问题</li>
+    <li><strong>客户集中度</strong>：TOP5 客户消耗占比 / 主力客户数变化（去单点化的量化指标）</li>
+    <li><strong>四方交付</strong>：每一方交付项的状态与卡点（红黄绿）</li>
+    <li><strong>合规健康度</strong>：素材驳回率 / 峰值期审核响应时长 / 风控异动客户数</li>
+  </ul>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sh"><span class="sn">06</span><h2>需要拍板的六件事</h2></div>
+  <p class="sd">这几项不定，Phase 0 无法启动。</p>
+
+  <div class="dec"><div class="no">1</div><div class="body">
+    <h4>周期与命名</h4>
+    <p>10/09—12/21 冬至收官；双主题并列命名，避免食养季被当成双 11 的附属而被弱化。</p>
+  </div></div>
+
+  <div class="dec"><div class="no">2</div><div class="body">
+    <h4>目标口径统一用相对增速与周期占比</h4>
+    <p>全篇不使用绝对日耗，各行业线按同一逻辑代入自身基数横向对齐。周期均值 +23%、食养季地板 +17% 是否接受。</p>
+  </div></div>
+
+  <div class="dec"><div class="no">3</div><div class="body">
+    <h4>扶持钱包在两个节点间的分配</h4>
+    <p>建议两个节点各占一半，而非按周期长度或峰值比例分配；食养季那一半再拆成三波节气档位。这是双节合一最容易翻车的地方——扶持全烧在双 11，地板必塌。</p>
+  </div></div>
+
+  <div class="dec"><div class="no">4</div><div class="body">
+    <h4>专职项目 PM 归属</h4>
+    <p>造节需要一个专职角色对接四方、维护 SOP 表、出双周报。现有成员均有主盘，需明确指定或申请协同资源。</p>
+  </div></div>
+
+  <div class="dec"><div class="no">5</div><div class="body">
+    <h4>四方协同的立项层级</h4>
+    <p>跨部门协同靠单一行业线拉会难拿排期，建议由中心层面出面发起立项、行业线承接执行，四方交付才有依据。</p>
+  </div></div>
+
+  <div class="dec"><div class="no">6</div><div class="body">
+    <h4>与年货节的衔接方式</h4>
+    <p>冬至收官距年货节仅数周，需确认本次沉淀的货盘、素材与人群资产是否直接作为年货节启动库存，以及 SOP 模板是否由中心统一收口复用。</p>
+  </div></div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sh"><span class="sn">07</span><h2>风险清单</h2></div>
+
+  <table>
+    <thead><tr><th style="width:34px"></th><th style="width:158px">风险</th><th>说明</th><th style="width:205px">应对</th></tr></thead>
+    <tbody>
+      <tr><td><span class="dot d-r"></span></td><td><b>食养季塌方</b></td><td>双 11 把预算与扶持抽干，11/15 后收入断崖。这是双节合一最大的失败模式，也是本方案设地板指标的原因。食养季恰是周期消耗占比最高的一段</td><td>扶持两节点各半；食养季拆三波节气档位；爆发期返场强制做人群资产交接</td></tr>
+      <tr><td><span class="dot d-r"></span></td><td><b>结构性缺口未解</b></td><td>存在增速为负的客群，原因尚未定性。若属主动收缩，造节也补不回来</td><td>Phase 0 内完成逐户排查定性；若确认主动收缩，食养季目标改由节气新客与货盘增量承接</td></tr>
+      <tr><td><span class="dot d-r"></span></td><td><b>合规边界压制打法</b></td><td>蓝帽禁达人代言与专家背书、跨境不准入小店直播，导致 Track A 打法无法平移到 Track B</td><td>审核方在 Phase 1 出书面清单；Track B 蓝帽只走自营直播与直购加粉；跨境双 11 只走直购与 CID</td></tr>
+      <tr><td><span class="dot d-y"></span></td><td><b>单点依赖</b></td><td>当前增量集中在个别客户，任一回落即缺口重开</td><td>食养季设去单点化目标（主力客户数翻倍、TOP5 集中度下降）；客户结构月度复核</td></tr>
+      <tr><td><span class="dot d-y"></span></td><td><b>四方排期落空</b></td><td>四方各有 OKR，单一行业线拉会难拿排期。产品侧历史上对时效性过强的需求不倾向承接</td><td>争取中心层面立项背书；交付项写进 SOP 表纳入双周报公开跟进；对每一方讲清互惠收益</td></tr>
+      <tr><td><span class="dot d-y"></span></td><td><b>峰值期卡审掉量</b></td><td>本行业属高频卡审，素材必备要素缺一即驳回。峰值日驳回等于直接损失收入</td><td>Phase 1 预审绿通与素材合规自查；峰值期审核值班 4 小时响应；AIGC 快速补量兜底</td></tr>
+      <tr><td><span class="dot d-g"></span></td><td><b>产品能力未就绪</b></td><td>部分节点产品能力此前已反馈通路需重新研发、周期较长，被顺延为后续节点储备</td><td>Phase 0 内确认 Q4 可用能力清单，不把方案押在未就绪能力上；不可用则走人工替代方案</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <strong>Q4 造节 Roadmap v1.1 讨论稿</strong> · 2026-09-07 · 食品饮料一中心<br>
+  骨架参照中心现有节点运营 SOP（六大提收方向 + 双周报节奏）；全篇采用「相对节前基线增速」与「占节点周期消耗比例」两个口径，不使用单组绝对日耗。<br>
+  所有目标增速为建议值，需在 Phase 0 与中心及各方拍板确认后生效。四方接口人与各项 Owner 待联席会认领后回填。
+</footer>
+
+</div>
+</body>
+</html>
